@@ -3683,3 +3683,21 @@ Started GET "/subjects/new" for 127.0.0.1 at 2014-04-22 10:22:36 -0400
 Rendered subjects/_form.html.erb (0.7ms)
 Rendered subjects/new.html.erb within layouts/admin (3.4ms)
 Completed 200 OK in 68ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-22 10:44:17 -0400
+  Processing by DemoController#index as HTML
+Rendered demo/index.html.erb within layouts/admin (1.5ms)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-22 10:44:35 -0400
+  Processing by SubjectsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSubject Load (0.2ms)[0m  SELECT `subjects`.* FROM `subjects` ORDER BY subjects.position ASC
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `admin_users_pages`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `pages` WHERE (`pages`.subject_id = 1)) AS subquery
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `pages` WHERE (`pages`.subject_id = 2)) AS subquery[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `pages` WHERE (`pages`.subject_id = 3)) AS subquery
+Rendered subjects/list.html.erb within layouts/admin (44.2ms)
+Completed 200 OK in 102ms (Views: 44.7ms | ActiveRecord: 1.5ms)

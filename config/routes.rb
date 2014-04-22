@@ -1,6 +1,6 @@
 SimpleCms::Application.routes.draw do
   #get "demo/index"
-  root :to => "demo#index"
+  root :to => "subjects#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
