@@ -1,4 +1,96 @@
+* { margin: 0; padding: 0; }
 html { height: 100%; width: 100%; }
-body { width: 100%; min-width: 980px; height: 100%; margin: 0; padding: 0; }
+body { 
+	width: 100%; 
+	min-width: 980px;
+	height: 100%;
+	margin: 0;
+	padding: 0; }
+	body div#header {
+		height: 70px;
+		padding-top: 30px;
+		background-color: #654621;
+		color: white;
+		text-align: center;
+		font-size: 20px;}
+
+	body div#main {
+		padding-top: 30px;
+		background-color: #D5C9A4;
+		min-height: 600px;}
+		body div#main div.notice {
+			max-width: 1200px;
+			margin: 0 auto;
+			color: #3E5A33;}
+			
+		body div#main div#content {
+			width: 80%;
+			margin: 0 auto;
+			max-width: 1200px;}
+			body div#main div#content a.back-link {
+				text-decoration: none;
+				color: #705320;
+				font-size: 16px;
+				font-weight: bold;}
+
+				body div#main div#content div.subject {
+					max-width: 500px;
+					height: 260px;
+					margin: 0 auto;
+					padding-top: 50px;}
+
+				body div#main div#content div.subject h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
+				body div#main div#content div.subject.show table {
+					margin: 0 auto;}
+				body div#main div#content div.subject.list a.action.new {
+					text-decoration: none;
+					color: #6D370F;
+					font-size: 18px;
+					font-weight: 900;}
+					body div#main div#content div.subject.list table tr th:nth-child(2) {
+						width: auto;}
+					body div#main div#content div.subject.list table tr th:nth-child(5) {
+						width: auto;}
+					body div#main div#content div.subject table tr th {
+						width: 80px;
+						text-align: left;
+						padding: 5px;
+						font-size: 20px;
+						color: #2B1C11}
+					body div#main div#content div.subject table tr td input {
+						text-align: left;
+						padding: 3px 10px;
+						font-size: 18px;
+						color: #2B1C11;
+						font-weight: bold;
+						border-radius: 5px;}
+						body div#main div#content div.subject table tr td input[type='checkbox'] {
+							width: 23px;
+							height: 23px;}
+
+				body div#main div#content div.subject div.form-buttons input {
+					float: right;
+					margin-right: 40px;
+					font-size: 18px;
+					padding: 5px 15px;
+					border-radius: 15px;
+					color: #2B1C11;
+					font-weight: bold;
+					background-color: transparent;}
+
+	body div#footer {
+		height: 20px;
+		padding: 20px 50px;
+		background-color: #2B1C11;}
+		body div#footer p {
+			text-align: right;
+			color: white;
+			font-size: 15px;
+			font-weight: bold;}
 
 .center { text-align: center; }
