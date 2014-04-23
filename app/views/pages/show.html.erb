@@ -23,13 +23,13 @@
 				<% if @page.subject.nil? %>
 					&nbsp;
 				<% else %>
-					<%= @page.subject.name %>
+					<%= link_to(@page.subject.name, {:controller => 'subjects', :action => 'show', :id => @page.subject.id}) %>
 				<% end %>
 			</td>
 		</tr>
 		<tr>
 			<th>Sections</th>
-			<td><%= @page.sections.size %></td>
+			<td><%= link_to(@page.sections.size, {:controller => 'sections', :action => 'list'}) %></td>
 		</tr>
 		<tr>
 			<th>Visible?</th>

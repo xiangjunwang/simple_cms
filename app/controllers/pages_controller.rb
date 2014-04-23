@@ -2,6 +2,8 @@ class PagesController < ApplicationController
 
 	layout 'admin'
 
+	before_filter :confirm_logged_in
+	
 	def index
 		list
 		render('list')
@@ -17,6 +19,8 @@ class PagesController < ApplicationController
 
 	def new
 		@page = Page.new
+		@subject_id_array = Subject.order("subjects.id ASC").all(:select => :id).collect(&:id)
+		@page_count = Page.count + 1
 	end
 
 	def create
@@ -29,12 +33,16 @@ class PagesController < ApplicationController
 			redirect_to(:action => 'list')
 		else
 			# If save filas, redisplay the form so user can fix problems
+			@page_count = Page.count + 1
+			@subject_id_array = Subject.order("subjects.id ASC").all(:select => :id).collect(&:id)
 			render('new')
 		end
 	end
 
 	def edit
 		@page = Page.find(params[:id])
+		@subject_id_array = Subject.order("subjects.id ASC").all(:select => :id).collect(&:id)
+		@page_count = Page.count
 	end
 
 	def update
@@ -47,6 +55,8 @@ class PagesController < ApplicationController
 			redirect_to(:action => 'show', :id => @page.id)
 		else
 			# If save filas, redisplay the form so user can fix problems
+			@page_count = Page.count
+			@subject_id_array = Subject.order("subjects.id ASC").all(:select => :id).collect(&:id)
 			render('edit')
 		end
 	end

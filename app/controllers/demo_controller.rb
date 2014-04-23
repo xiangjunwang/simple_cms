@@ -2,6 +2,9 @@ class DemoController < ApplicationController
 
 	layout 'admin'
 
+	before_filter :confirm_logged_in
+	
+
 	def index
 		# render(:template => 'demo/hello')
 		# redirect_to(:controller => 'demo', :action => 'other_hello')
@@ -18,6 +21,9 @@ class DemoController < ApplicationController
 	end
 
 	def javascript
+	end
+
+	def escape_output
 	end
 
 end

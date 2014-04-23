@@ -1,0 +1,31 @@
+<%= render(:partial => 'shared/error_messages', :locals => {:object => @section}) %>
+
+<table summary='Section form fields'>
+	<tr>
+		<th><%= f.label(:page_id, 'Page Id') %></th>
+		<td><%= f.select(:page_id, @page_id_array) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:name) %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:position) %></th>
+		<td><%= f.select(:position, 1..@section_count) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:visible) %></th>
+		<td><%= f.check_box(:visible) %></td>
+	</tr>
+	<tr>
+		<th>Content Type</th>
+		<td>
+			<%= f.radio_button(:content_type, 'text') %> text
+			<%= f.radio_button(:content_type, 'HTML') %> HTML
+		</td>
+	</tr>
+	<tr>
+		<th>Content</th>
+		<td><%= f.text_area(:content, :size => '30x10') %></td>
+	</tr>
+</table>
