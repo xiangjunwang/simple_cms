@@ -7,13 +7,32 @@ span.status.true { background: green; color: green; }
 span.status.false { background: red; color: red; }
 tr.odd { background-color: #C0B9A2; }
 tr.even { background-color: #E0CB8A; }
-a.action { background-color: #F7A670; border-radius: 3px; text-decoration: none; }
+a.action { background-color: #F7A670; border-radius: 3px; text-decoration: none; border: solid 1px #837267; color: #6D370F;}
 a.action.new { border: solid 1px #837267; background-color: #F7A670; padding: 2px 10px; border-radius: 10px; }
-table { margin: 0 auto; }
+table { width: 100%; margin: 0 auto; }
 
 body div#main div#content div.subject div.scrap { float: left; width: 330px; }
 body div#main div#content div.page div.scrap { float: left; width: 355px; }
 body div#main div#content div.section div.scrap { float: left; width: 745px; }
+body div#main div#content div.user div.scrap { float: left; width: 330px; }
+body div#main div#navigation {
+	width: 20%;
+	min-width: 200px;
+	float: left;
+	background: rgb(112, 179, 112);
+	padding: 30px 0 0 50px;
+	height: 570px;}
+	body div#main div#navigation li {
+		font-size: 24px;
+		list-style: none;}
+		body div#main div#navigation li > ul > li {
+			font-size: 20px;
+			padding-left: 20px;}
+			body div#main div#navigation li ul li a {
+				padding-left: 5px;
+				text-decoration: none;
+				font-size: 20px;}
+
 body div#errorExplanation { 
 	border: solid 2px #CA3D3D; }
 	body div#errorExplanation h2 { 
@@ -45,7 +64,6 @@ body {
 		font-size: 20px;}
 
 	body div#main {
-		padding-top: 30px;
 		background-color: #D5C9A4;
 		min-height: 600px;}
 		body div#main div.notice {
@@ -54,175 +72,208 @@ body {
 			color: #3E5A33;}
 			
 		body div#main div#content {
-			width: 80%;
+			width: 70%;
 			margin: 0 auto;
-			max-width: 1200px;}
+			max-width: 1200px;
+			float: left;}
 			body div#main div#content a.back-link {
 				text-decoration: none;
 				color: #705320;
 				font-size: 16px;
 				font-weight: bold;}
 
-				body div#main div#content div.subject {
-					max-width: 500px;
-					margin: 0 auto;
-					padding-top: 50px;}
-					body div#main div#content div.subject h2 {
-						color: #44201D;
-						font-size: 30px;
-						text-align: center;
-						margin-bottom: 20px;
-						font-weight: bold;}
-					body div#main div#content div.subject.show table {
-						margin: 0 auto;}
-					body div#main div#content div.subject.list a.action.new {
-						text-decoration: none;
-						color: #6D370F;
-						font-size: 18px;
-						font-weight: 900;}
-						body div#main div#content div.subject.list table tr th:nth-child(2) {
-							width: auto;}
-						body div#main div#content div.subject.list table tr th:nth-child(5) {
-							width: auto;}
-						body div#main div#content div.subject table tr th {
-							width: 80px;
-							text-align: left;
-							padding: 5px;
-							font-size: 20px;
-							color: #2B1C11}
-						body div#main div#content div.subject table tr td input {
-							text-align: left;
-							padding: 3px 10px;
-							font-size: 18px;
-							color: #2B1C11;
-							font-weight: bold;
-							border-radius: 5px;}
-							body div#main div#content div.subject table tr td input[type='checkbox'] {
-								width: 23px;
-								height: 23px;}
-
-				body div#main div#content div.subject div.form-buttons input {
-					float: right;
-					margin-right: 40px;
+			body div#main div#content div.subject {
+				max-width: 500px;
+				margin: 0 auto;
+				padding-top: 50px;}
+				body div#main div#content div.subject h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
+				body div#main div#content div.subject.show table {
+					margin: 0 auto;}
+				body div#main div#content div.subject.list a.action.new {
+					text-decoration: none;
+					color: #6D370F;
 					font-size: 18px;
-					padding: 5px 15px;
-					border-radius: 15px;
-					color: #2B1C11;
-					font-weight: bold;
-					background-color: transparent;}
-
-
-
-				body div#main div#content div.page {
-					max-width: 500px;
-					margin: 0 auto;
-					padding-top: 50px;}
-					body div#main div#content div.page h2 {
-						color: #44201D;
-						font-size: 30px;
-						text-align: center;
-						margin-bottom: 20px;
-						font-weight: bold;}
-					body div#main div#content div.page.show table {
-						margin: 0 auto;}
-					body div#main div#content div.page.list a.action.new {
-						text-decoration: none;
-						color: #6D370F;
+					font-weight: 900;}
+					body div#main div#content div.subject.list table tr th:nth-child(2) {
+						width: auto;}
+					body div#main div#content div.subject.list table tr th:nth-child(5) {
+						width: auto;}
+					body div#main div#content div.subject table tr th {
+						width: 80px;
+						text-align: left;
+						padding: 5px;
+						font-size: 20px;
+						color: #2B1C11}
+					body div#main div#content div.subject table tr td input {
+						text-align: left;
+						padding: 3px 10px;
 						font-size: 18px;
-						font-weight: 900;}
-						body div#main div#content div.page.list table tr th {
+						color: #2B1C11;
+						font-weight: bold;
+						border-radius: 5px;}
+						body div#main div#content div.subject table tr td input[type='checkbox'] {
+							width: 23px;
+							height: 23px;}
+
+			body div#main div#content div.subject div.form-buttons input {
+				float: right;
+				margin-right: 40px;
+				font-size: 18px;
+				padding: 5px 15px;
+				border-radius: 15px;
+				color: #2B1C11;
+				font-weight: bold;
+				background-color: transparent;}
+
+			body div#main div#content div.page {
+				max-width: 500px;
+				margin: 0 auto;
+				padding-top: 50px;}
+				body div#main div#content div.page h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
+				body div#main div#content div.page.show table {
+					margin: 0 auto;}
+				body div#main div#content div.page.list a.action.new {
+					text-decoration: none;
+					color: #6D370F;
+					font-size: 18px;
+					font-weight: 900;}
+					body div#main div#content div.page.list table tr th {
+						width: auto;}
+						body div#main div#content div.page.list table tr th:first-child {
+							width: 15px;}
+						body div#main div#content div.page.list table tr th:nth-child(6) {
 							width: auto;}
-							body div#main div#content div.page.list table tr th:first-child {
+					body div#main div#content div.page table tr th {
+						width: 80px;
+						text-align: left;
+						padding: 5px;
+						font-size: 20px;
+						color: #2B1C11}
+					body div#main div#content div.page table tr td input {
+						text-align: left;
+						padding: 3px 10px;
+						font-size: 18px;
+						color: #2B1C11;
+						font-weight: bold;
+						border-radius: 5px;}
+						body div#main div#content div.page table tr td input[type='checkbox'] {
+							width: 23px;
+							height: 23px;}
+
+			body div#main div#content div.page div.form-buttons input {
+				float: right;
+				margin-right: 40px;
+				font-size: 18px;
+				padding: 5px 15px;
+				border-radius: 15px;
+				color: #2B1C11;
+				font-weight: bold;
+				background-color: transparent;}
+
+			body div#main div#content div.section {
+				max-width: 900px;
+				margin: 0 auto;
+				padding-top: 50px;}
+				body div#main div#content div.section h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
+				body div#main div#content div.section.show table {
+					margin: 0 auto;}
+				body div#main div#content div.section.list a.action.new {
+					text-decoration: none;
+					color: #6D370F;
+					font-size: 18px;
+					font-weight: 900;}
+					body div#main div#content div.section.list table {
+						width: 100%; }
+						body div#main div#content div.section.list table tr th {
+							width: auto;}
+							body div#main div#content div.section.list table tr th:first-child {
 								width: 15px;}
-							body div#main div#content div.page.list table tr th:nth-child(6) {
+							body div#main div#content div.section.list table tr th:nth-child(6) {
 								width: auto;}
-						body div#main div#content div.page table tr th {
-							width: 80px;
+						body div#main div#content div.section table tr th {
+							width: 150px;
 							text-align: left;
 							padding: 5px;
-							font-size: 20px;
+							font-size: 18px;
 							color: #2B1C11}
-						body div#main div#content div.page table tr td input {
+						body div#main div#content div.section table tr td input {
 							text-align: left;
 							padding: 3px 10px;
 							font-size: 18px;
 							color: #2B1C11;
 							font-weight: bold;
 							border-radius: 5px;}
-							body div#main div#content div.page table tr td input[type='checkbox'] {
+							body div#main div#content div.section table tr td input[type='checkbox'] {
 								width: 23px;
 								height: 23px;}
 
-				body div#main div#content div.page div.form-buttons input {
-					float: right;
-					margin-right: 40px;
-					font-size: 18px;
-					padding: 5px 15px;
-					border-radius: 15px;
-					color: #2B1C11;
-					font-weight: bold;
-					background-color: transparent;}
+						body div#main div#content div.section table tr td textarea#section_content {
+							text-align: left;
+							padding: 3px 10px;
+							font-size: 18px;
+							color: #2B1C11;
+							font-weight: bold;
+							resize: none;
+							border-radius: 5px;}
 
-				body div#main div#content div.section {
-					max-width: 900px;
-					margin: 0 auto;
-					padding-top: 50px;}
-					body div#main div#content div.section h2 {
+			body div#main div#content div.section div.form-buttons input {
+				float: right;
+				font-size: 18px;
+				padding: 5px 15px;
+				border-radius: 15px;
+				color: #2B1C11;
+				font-weight: bold;
+				margin-right: 187px;
+				background-color: transparent;}
+
+			body div#main div#content div.menu {
+				max-width: 500px;
+				margin: 0 auto;
+				padding-top: 50px;}
+				body div#main div#content div.menu h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
+				body div#main div#content div.menu div.identity {
+					font-size: 15px;
+					text-align: right;}
+				body div#main div#content div.menu ul {
+					padding: 50px 0 0 100px;}
+					body div#main div#content div.menu ul li {
+						margin: 5px 10px;
+						list-style: none;
 						color: #44201D;
-						font-size: 30px;
-						text-align: center;
-						margin-bottom: 20px;
-						font-weight: bold;}
-					body div#main div#content div.section.show table {
-						margin: 0 auto;}
-					body div#main div#content div.section.list a.action.new {
-						text-decoration: none;
-						color: #6D370F;
-						font-size: 18px;
-						font-weight: 900;}
-						body div#main div#content div.section.list table {
-							width: 100%; }
-							body div#main div#content div.section.list table tr th {
-								width: auto;}
-								body div#main div#content div.section.list table tr th:first-child {
-									width: 15px;}
-								body div#main div#content div.section.list table tr th:nth-child(6) {
-									width: auto;}
-							body div#main div#content div.section table tr th {
-								width: 150px;
-								text-align: left;
-								padding: 5px;
-								font-size: 18px;
-								color: #2B1C11}
-							body div#main div#content div.section table tr td input {
-								text-align: left;
-								padding: 3px 10px;
-								font-size: 18px;
-								color: #2B1C11;
-								font-weight: bold;
-								border-radius: 5px;}
-								body div#main div#content div.section table tr td input[type='checkbox'] {
-									width: 23px;
-									height: 23px;}
+						font-size: 22px;}
+						body div#main div#content div.menu ul li a {
+							text-decoration: none; }
 
-							body div#main div#content div.section table tr td textarea#section_content {
-								text-align: left;
-								padding: 3px 10px;
-								font-size: 18px;
-								color: #2B1C11;
-								font-weight: bold;
-								resize: none;
-								border-radius: 5px;}
-
-				body div#main div#content div.section div.form-buttons input {
-					float: right;
-					font-size: 18px;
-					padding: 5px 15px;
-					border-radius: 15px;
-					color: #2B1C11;
-					font-weight: bold;
-					margin-right: 187px;
-					background-color: transparent;}
+			body div#main div#content div.user {
+				max-width: 500px;
+				margin: 0 auto;
+				padding-top: 50px;}
+				body div#main div#content div.user h2 {
+					color: #44201D;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+					font-weight: bold;}
 
 	body div#footer {
 		height: 20px;

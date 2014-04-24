@@ -1,6 +1,6 @@
 <% @page_title = "Display Page: #{@page.name}" %>
 
-<%= link_to('<< Back to List', {:action => 'list'}, :class => 'back-link') %>
+<%= link_to('<< Back to List', {:action => 'list', :subject_id => @subject.id}, :class => 'back-link') %>
 
 <div class='page show'>
 	<h2>Show Page</h2>
@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<th>Sections</th>
-			<td><%= link_to(@page.sections.size, {:controller => 'sections', :action => 'list'}) %></td>
+			<td><%= link_to(@page.sections.size, {:controller => 'sections', :action => 'list', :page_id => @page.id}) %></td>
 		</tr>
 		<tr>
 			<th>Visible?</th>

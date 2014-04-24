@@ -1,19 +1,18 @@
 <% @page_title = "Pages List" %>
 
+<%= link_to('<< Back to Subjects List', {:controller => 'subjects', :action => 'list'}, :class => 'back-link') %>
 
 <div class='page list'>
 	<h2>Pages</h2>
 
 	<div class='scrap'><%= pluralize(@pages.size, 'page') %> found</div>
 
-	<%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
+	<%= link_to("Add New Page", {:action => 'new', :subject_id => @subject.id}, :class => 'action new') %>
 
 	<table class='listing' summary='page list'>
 		<tr class='header'>
 			<th>&nbsp;</th>
-			<!-- <th>Subject</th> -->
 			<th>Page</th>
-			<th>Permalink</th>
 			<th>Sections</th>
 			<th>Visible</th>
 			<th>Actions</th>
@@ -21,21 +20,13 @@
 		<% @pages.each do |page| %>
 		<tr class="<%= cycle('odd', 'even') %>">
 			<td><%= page.position %></td>
-			<!-- <td>
-				<% if page.subject.nil? %>
-					<%= 'Not yet' %>
-				<% else %>
-					<%= link_to(page.subject.name, {:controller => 'subjects', :action => 'show', :id => page.subject.id}) %>
-				<% end %>
-			</td> -->
 			<td><%= page.name %></td>
-			<td><%= page.permalink %></td>
-			<td><%= page.sections.size %></td>
+			<td><%= link_to(page.sections.size, {:controller => 'sections', :page_id =>page.id}) %></td>
 			<td class='center'><%= status_tag(page.visible) %></td>
 			<td class='actions'>
-				<%= link_to('Show', {:action => 'show', :id => page.id}, :class => 'action show') %>
-				<%= link_to('Edit', {:action => 'edit', :id => page.id}, :class => 'action edit') %>
-				<%= link_to('Delete', {:action => 'delete', :id => page.id}, :class => 'action delete') %>
+				<%= link_to('Show', {:action => 'show', :id => page.id, :subject_id => @subject.id}, :class => 'action show') %>
+				<%= link_to('Edit', {:action => 'edit', :id => page.id, :subject_id => @subject.id}, :class => 'action edit') %>
+				<%= link_to('Delete', {:action => 'delete', :id => page.id, :subject_id => @subject.id}, :class => 'action delete') %>
 			</td>
 		</tr>
 		<% end %>

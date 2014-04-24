@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<th>Pages</th>
-			<td><%= link_to(@subject.pages.size, {:controller => 'pages', :action => 'list'}) %></td>
+			<td><%= link_to(@subject.pages.size, {:controller => 'pages', :action => 'list', :subject_id => @subject.id}) %></td>
 		</tr>
 		<tr>
 			<th>Visible?</th>

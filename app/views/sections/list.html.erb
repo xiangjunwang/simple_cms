@@ -1,17 +1,17 @@
 <% @page_title = "Sections List" %>
 
+<%= link_to('<< Back to Pages List', {:controller => 'pages', :action => 'list', :subject_id => @page.subject.id}, :class => 'back-link') %>
 
 <div class='section list'>
 	<h2>Sections</h2>
 
 	<div class='scrap'><%= pluralize(@sections.size, 'section') %> found</div>
 
-	<%= link_to("Add New Section", {:action => 'new'}, :class => 'action new') %>
+	<%= link_to("Add New Section", {:action => 'new', :page_id => @page.id}, :class => 'action new') %>
 
 	<table class='listing' summary='section list'>
 		<tr class='header'>
 			<th>&nbsp;</th>
-			<!-- <th>Subject</th> -->
 			<th>Name</th>
 			<th>Subject</th>
 			<th>Page</th>
@@ -25,29 +25,18 @@
 			<td><%= section.position %></td>
 			<td><%= section.name %></td>
 			<td>
-				<% if section.page.nil? %>
-					&nbsp;
-				<% else if section.page.subject.nil? %>
-						&nbsp;
-					<% else %>
-						<%= link_to(section.page.subject.name, {:controller => 'subjects', :action => 'show', :id => section.page.subject.id}) %>
-					<% end %>
-				<% end %>
+				<%= link_to(section.page.subject.name, {:controller => 'subjects', :action => 'show', :id => section.page.subject.id}) %>
 			</td>
 			<td>
-				<% if section.page.nil? %>
-					&nbsp;
-				<% else %>
-					<%= link_to(section.page.name, {:controller => 'pages', :action => 'show', :id => section.page.id}) %>
-				<% end %>
+				<%= link_to(section.page.name, {:controller => 'pages', :action => 'show', :id => section.page.id, :subject_id => section.page.subject.id}) %>
 			</td>
 			<td><%= section.content_type %></td>
 			<td><%= truncate(section.content) %></td>
 			<td class='center'><%= status_tag(section.visible) %></td>
 			<td class='actions'>
-				<%= link_to('Show', {:action => 'show', :id => section.id}, :class => 'action show') %>
-				<%= link_to('Edit', {:action => 'edit', :id => section.id}, :class => 'action edit') %>
-				<%= link_to('Delete', {:action => 'delete', :id => section.id}, :class => 'action delete') %>
+				<%= link_to('Show', {:action => 'show', :id => section.id, :page_id => @page.id}, :class => 'action show') %>
+				<%= link_to('Edit', {:action => 'edit', :id => section.id, :page_id => @page.id}, :class => 'action edit') %>
+				<%= link_to('Delete', {:action => 'delete', :id => section.id, :page_id => @page.id}, :class => 'action delete') %>
 			</td>
 		</tr>
 		<% end %>

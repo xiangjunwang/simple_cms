@@ -13,6 +13,7 @@
 
 	<div id='main'>
 		<div id='navigation'>
+			<%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
 		</div>
 		<% if !flash[:notice].blank? %>
 			<div class='notice'>

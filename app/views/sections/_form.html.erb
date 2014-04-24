@@ -1,9 +1,9 @@
-<%= render(:partial => 'shared/error_messages', :locals => {:object => @section}) %>
+<%= error_messages_for(@section) %>
 
 <table summary='Section form fields'>
 	<tr>
 		<th><%= f.label(:page_id, 'Page Id') %></th>
-		<td><%= f.select(:page_id, @page_id_array) %></td>
+		<td><%= f.select(:page_id, @page_id_array, :selected => @page.id) %></td>
 	</tr>
 	<tr>
 		<th><%= f.label(:name) %></th>
