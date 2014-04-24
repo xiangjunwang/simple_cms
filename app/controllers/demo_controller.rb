@@ -26,4 +26,21 @@ class DemoController < ApplicationController
 	def escape_output
 	end
 
+	def make_error
+		# render(:text => "test"
+		# render(:text => @something.upcase)
+		# render(:text => "1" + 1)
+	end
+
+	def logging
+		@subjects = Subject.all
+		ActiveSupport::Deprecation.warn("This is a deprecation.")
+		logger.debug("This is Debug")
+		logger.info("This is Info")
+		logger.warn("This is Warn")
+		logger.error("This is Error")
+		logger.fatal("This is Fatal")
+		render(:text => 'Logged!')
+	end
+
 end
